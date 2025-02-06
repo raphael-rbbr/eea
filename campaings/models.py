@@ -217,7 +217,7 @@ class Inscription(models.Model):
 #     content = RichTextUploadingField(max_length=25000, verbose_name=_("Texto"), config_name='awesome_ckeditor', extra_plugins = ['codesnippet'])
 #     THEME_CHOICES = [
 #         ("OP", "Artigo de opinião"),
-#         ("ART", "Matéria"),
+#         ("ART", "Matéria"), sf
 #         ("CUR", "Curiosidades"),
 #         ("TUT", "Tutorial"),
 #         ("TIP", "Dicas"),
