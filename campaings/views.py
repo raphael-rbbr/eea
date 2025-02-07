@@ -55,6 +55,7 @@ def CreateInscriprion(request):
         new_previous_work = request.POST.get('destacaranimacao')
         new_message = request.POST.get('porqueinteresse')
         new_portifolio = request.POST.get('linkportifolio')
+        new_file = request.POST.get('desenho')
         Inscription.objects.create(name = new_name,
                                     birthday = new_birthday,
                                     cpf = new_cpf,
@@ -100,6 +101,7 @@ def CreateInscriprion(request):
                                     critics = new_critics,
                                     previous_work = new_previous_work,
                                     message = new_message,
-                                    portifolio = new_portifolio,)
+                                    portifolio = new_portifolio,
+                                    file = new_file,)
     context= {}
     return render(request, "home.html", context)
