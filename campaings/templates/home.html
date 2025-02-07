@@ -9,7 +9,7 @@
 
   <div id="cover" style="display: none;"></div>
 
-  <div class="popupformcl">
+  {% comment %} <div class="popupformcl">
 
 <div class="formpopupcl">
 
@@ -20,8 +20,8 @@
   <p>Cadastre-se e garanta seu desconto!</p>
 
 
-  <form action="https://estudioescola.us20.list-manage.com/subscribe/post?u=5246cb86ae4edf01550aaeb29&amp;id=9a93b95153" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-
+  <form action="index" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    {% csrf_token %}
     <div class="flexfields">
     <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Nome Completo">
 
@@ -49,7 +49,7 @@
 
   </form>
 
-</div>
+</div> {% endcomment %}
 
 <div class="shadowcl"></div>
 
@@ -162,7 +162,7 @@
 
           </div>
 
-          <form id="criauser" name="criauser" method="post" enctype="multipart/form-data" novalidate="novalidate">
+          <form action="." id="criauser" name="criauser" method="POST" enctype="multipart/form-data" novalidate="novalidate"> {% csrf_token %}
 
               <div class="dadospessoais abaform">
 
@@ -512,7 +512,7 @@
 
               <div class="dadosinformacoes abaform">
 
-              <p>Como você ficou sabendo das inscrições para o processo seletivo deste ano? </p>
+               <p>Como você ficou sabendo das inscrições para o processo seletivo deste ano? </p>
 
 
                       <div class="boxerro">
@@ -607,6 +607,7 @@
                               <option value="2021">2021</option>
                <option value="2022">2022</option>
               <option value="2023">2023</option>
+              <option value="2023">2024</option>
                           </select>
                       </div>
 
@@ -716,7 +717,7 @@
 
                   <div class="spacer"></div>
 
-                  <p>5) DOS ITENS ABAIXO, MARQUE AQUELES QUE VOCÊ JÁ TEVE A OPORTUNIDADE DE REALIZAR: </p>
+                  {% comment %} <p>5) DOS ITENS ABAIXO, MARQUE AQUELES QUE VOCÊ JÁ TEVE A OPORTUNIDADE DE REALIZAR: </p>
 
                   <div class="spacer"></div>
 
@@ -758,7 +759,7 @@
                       <div class="litle">
                           <input type="checkbox" name="oportunidade[]" id="oportunidade_divulgar" value="Tenho um local reservado especialmente para divulgar meus trabalhos">
                           <label for="oportunidade_divulgar">Tenho um local reservado especialmente para divulgar meus trabalhos</label>
-                      </div>
+                      </div> {% endcomment %}
 
                   <div class="spacer"></div>
 
@@ -802,7 +803,7 @@
 
                   <div class="spacer"></div>
 
-                  <input type="file" name="desenho" id="desenho" accept="application/pdf">
+                  {% comment %} <input type="file" name="desenho" id="desenho" accept="application/pdf"> {% endcomment %}
 
                   <p class="smalltext">Enviando os desenhos poderemos conhecer melhor seu potencial e você terá mais chances de ser selecionado(a). Lembre-se que todos os desenhos precisam estar no mesmo arquivo e não podem ultrapassar a capacidade de 2MB permitida.</p>
 
@@ -836,7 +837,7 @@
 
     </div>
 
-    <form action="https://estudioescola.us4.list-manage.com/subscribe/post?u=92d1990ad580a14942037b024&amp;id=f68b9907c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    {% comment %} <form action="https://estudioescola.us4.list-manage.com/subscribe/post?u=92d1990ad580a14942037b024&amp;id=f68b9907c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
 
       <input type="text" placeholder="Nome" value="" name="FNAME" class="" id="mce-FNAME">
 
@@ -852,7 +853,7 @@
 
       <button id="mc-embedded-subscribe">Sim, por favor <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
 
-    </form>
+    </form> {% endcomment %}
 
     <div class="clear"></div>
 
