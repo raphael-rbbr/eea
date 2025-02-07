@@ -16,7 +16,7 @@ from django.urls import reverse_lazy
 class Inscription(models.Model):
     name = models.CharField(max_length=80, verbose_name=("Nome"), help_text=("NOME COMPLETO (Nome Social para pessoas transgênero):	"))
     ### DATA
-    slug = models.SlugField(("Slug"), max_length=255, unique=True, help_text=("Slug do seu post (para URLs)"))
+    # slug = models.SlugField(("Slug"), max_length=255, unique=True, help_text=("Slug do seu post (para URLs)"))
     created_at = models.DateTimeField(verbose_name="Data_criação", auto_now_add=True)
 
     birthday = models.DateTimeField(verbose_name="nascimento", null=True)
@@ -191,7 +191,7 @@ class Inscription(models.Model):
     #     ("NBW", "Nunca usei mas quero aprender!"),
     #     ("NO", "Nunca usei e não quero aprender a usar."),
     # ]
-    tablet = models.CharField(max_length=50,  default="OK", verbose_name=("tablet"),
+    tablet = models.CharField(max_length=100,  default="OK", verbose_name=("tablet"),
                              help_text=("Clique para selecionar"))
     likes_to_draw = models.CharField(max_length=50, verbose_name=("desenha"), null=False, blank=False)
     # FREQUENCY_CHOICES = [
@@ -209,6 +209,7 @@ class Inscription(models.Model):
     previous_work = models.CharField(max_length=80, verbose_name=("experiencia"), help_text=("HÁ OUTRA COISA QUE VOCÊ JÁ FEZ RELACIONADA À ANIMAÇÃO / AUDIOVISUAL QUE GOSTARIA DE DESTACAR?"))
     message = models.CharField(max_length=80, verbose_name=("recado"), help_text=("USE AS LINHAS ABAIXO PARA DAR SEU RECADO: POR QUE VOCÊ SE INTERESSOU EM PARTICIPAR DO ESTÚDIO ESCOLA?"))
     portifolio = models.CharField(max_length=80, verbose_name=("portifolio"), help_text=("VOCÊ POSSUI UM LOCAL ONDE DIVULGA SEU TRABALHO ARTÍSTICO? EM CASO AFIRMATIVO COMPARTILHE O LINK COM A GENTE!"))
+    file = models.FileField(upload_to='file_uploads/', null=True, blank=True)
 
 
 
@@ -232,7 +233,6 @@ class Inscription(models.Model):
 #     created_at = models.DateTimeField(auto_now_add=True)
 #     updated_at = models.DateTimeField(verbose_name="Última modificação", auto_now=True)
 
-#     photo = models.FileField(upload_to="blog/photos/%Y/%m/%d", default='blog/photos/post_place_holder.jpg', null=True, blank=True)
 
 
     def __str__(self):
